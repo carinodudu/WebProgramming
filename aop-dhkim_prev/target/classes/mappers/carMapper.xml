@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="org.kpu.dhcar.mapper.CarMapper">
+	<select id="selectBynum" resultType="org.kpu.dhcar.domain.CarVO">
+		select * from car where num = #{num}
+	</select>
+	
+	<select id="selectAll" resultType="org.kpu.dhcar.domain.CarVO">
+	<![CDATA[
+		select * from car
+	]]>
+	</select>
+	
+	<update id="update">
+		update car set num=#{num}, carname=#{carname}, category=#{category},
+							area=#{area}, image=#{image}, booker=#{booker}
+		where num=#{num}
+	</update>
+</mapper>
